@@ -1,8 +1,9 @@
 import { html, LitElement } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 
+import { Pokemon } from '../../models/Pokemon';
+import { API } from '../../config/constants';
 import pokemonCardStyles from './pokemon-card.styles';
-import { Pokemon } from 'models/Pokemon';
 
 @customElement('lit-pokemon-card')
 export class PokemonCard extends LitElement {
@@ -14,7 +15,7 @@ export class PokemonCard extends LitElement {
   render() {
     return html`<div class="pokemon-card">
       <img
-        src=${`https://img.pokemondb.net/sprites/brilliant-diamond-shining-pearl/normal/1x/${this.pokemon.image}`}
+        src=${`${API.POKEMON_IMAGE_REPO_URL}/${this.pokemon.image}`}
         alt=${this.pokemon.name}
       />
     </div>`;
