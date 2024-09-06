@@ -13,11 +13,12 @@ export class PokemonCard extends LitElement {
   pokemon?: Pokemon;
 
   render() {
-    return html`<div class="pokemon-card">
+    return html`<div class="pokemon-card" title=${this.pokemon?.name}>
       <img
         src=${`${API.POKEMON_IMAGE_REPO_URL}/${this.pokemon.image}`}
         alt=${this.pokemon.name}
       />
+      <span class="pokemon-card-name">${this.pokemon?.name}</span>
       <div class="pokemon-card-types">
         ${this.pokemon.type
           .split('/')

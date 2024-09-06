@@ -32,7 +32,7 @@ export const pokemonGridStyles = css`
     align-items: center;
     justify-content: center;
     font-size: 35px;
-    height: var(--pokemon-card-size);
+    height: 100%;
     margin-right: 20px;
     border-radius: 10px;
     box-shadow: var(--component-shadow);
