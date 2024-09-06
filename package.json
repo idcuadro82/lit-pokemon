@@ -1,0 +1,11 @@
+{
+  "name": "lit-pokemon",
+  "version": "1.0.0",
+  "description": "This is a Samtel dev test",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ivan D Cuadro",
+  "license": "ISC"
+}
