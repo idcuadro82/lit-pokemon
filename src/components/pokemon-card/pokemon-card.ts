@@ -18,6 +18,14 @@ export class PokemonCard extends LitElement {
         src=${`${API.POKEMON_IMAGE_REPO_URL}/${this.pokemon.image}`}
         alt=${this.pokemon.name}
       />
+      <div class="pokemon-card-types">
+        ${this.pokemon.type
+          .split('/')
+          .map(
+            (type) =>
+              html`<lit-pokemon-type class="pokemon-type" .type=${type} />`
+          )}
+      </div>
     </div>`;
   }
 }
