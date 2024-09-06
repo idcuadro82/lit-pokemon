@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "baseUrl": "./src",
+    "outDir": "./dist/",
+    "declaration": true,
+    "experimentalDecorators": true,
+    "emitDeclarationOnly": true,
+    "useDefineForClassFields": false,
+    "noImplicitAny": true,
+    "module": "es6",
+    "target": "es5",
+    "moduleResolution": "node"
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist/**/*"]
+}
