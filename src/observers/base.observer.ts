@@ -13,9 +13,9 @@ export class BaseObserver<T> {
       this._subscribers = this._subscribers.slice(removeIndex, 1);
   };
 
-  notify = <S>(data: S): void => {
+  notify = <S>(data: S, event?: string): void => {
     this._subscribers.forEach((subscriber) => {
-      subscriber(data);
+      subscriber(data, event);
     });
   };
 }

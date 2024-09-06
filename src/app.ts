@@ -5,6 +5,7 @@ import pokemonObserver from './observers/pokemon.observer';
 import { Pokemon } from './models/Pokemon';
 
 import appStyles from './app.styles';
+import { APP_EVENTS } from './config/constants';
 
 @customElement('lit-app')
 export class App extends LitElement {
@@ -23,16 +24,18 @@ export class App extends LitElement {
       <lit-main-layout>
         <div slot="content">
           ${showEvolutions
-            ? html`<lit-pokemon-evolutions .pokemons=${evolutions} /> `
+            ? html`<lit-pokemon-evolutions .evolutions=${evolutions} /> `
             : html`<lit-pokemon-grid />`}
         </div>
       </lit-main-layout>
     `;
   }
 
-  selectPokemon = (pokemon: Pokemon): void => {
-    this.selectedPokemon = pokemon;
-    this.requestUpdate();
+  selectPokemon = (pokemon: Pokemon, event: APP_EVENTS): void => {
+    if (event === APP_EVENTS.POKEMON_SELECTED) {
+      this.selectedPokemon = pokemon;
+      this.requestUpdate();
+    }
   };
 
   disconnectedCallback() {

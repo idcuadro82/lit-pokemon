@@ -25,6 +25,7 @@ export const pokemonEvolutionListStyles = css`
     align-items: stretch;
     width: 100%;
     margin-bottom: 20px;
+    cursor: pointer;
   }
 
   .pokemon-evolution-name {

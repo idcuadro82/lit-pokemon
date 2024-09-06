@@ -20,15 +20,19 @@ export class PokemonGrid extends LitElement {
   }
 
   render() {
-    return html`<div class="pokemon-grid">
-      ${this.pokemons.map(
-        (pokemon) =>
-          html`<lit-pokemon-card
-            .pokemon=${pokemon}
-            @click=${() => this.handlerPokemonClick(pokemon)}
-          />`
-      )}
-    </div>`;
+    return html`
+      <div class="pokemon-grid">
+        ${this.pokemons.map(
+          (pokemon) =>
+            html`
+              <lit-pokemon-card
+                .pokemon=${pokemon}
+                @click=${() => this.handlerPokemonClick(pokemon)}
+              />
+            `
+        )}
+      </div>
+    `;
   }
 
   handlerPokemonClick = (pokemon: Pokemon): void => {
