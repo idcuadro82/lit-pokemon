@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const Dotenv = require('dotenv-webpack');
 
 module.exports = {
   mode: 'development',
@@ -21,9 +22,22 @@ module.exports = {
           loader: 'babel-loader',
         },
       },
+      {
+        test: /\.(png|jpe?g|gif|svg)$/i,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              outputPath: 'assets',
+              name: '[name].[ext]',
+            },
+          },
+        ],
+      },
     ],
   },
   plugins: [
+    new Dotenv(),
     new HtmlWebpackPlugin({
       template: './src/index.html',
     }),
