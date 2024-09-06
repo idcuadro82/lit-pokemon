@@ -1,15 +1,18 @@
 import { LitElement, html } from 'lit';
-import { customElement, property } from 'lit/decorators.js';
+import { customElement } from 'lit/decorators.js';
 
 import pokemonObserver from './observers/pokemon.observer';
 import { Pokemon } from './models/Pokemon';
+import { APP_EVENTS } from './config/constants';
 
 import appStyles from './app.styles';
-import { APP_EVENTS } from './config/constants';
+
 
 @customElement('lit-app')
 export class App extends LitElement {
-  static styles = appStyles;
+  static get styles() {
+    return [appStyles];
+  }
   selectedPokemon: Pokemon;
 
   constructor() {

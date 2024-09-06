@@ -8,6 +8,7 @@ import pokemonEvolutionFormStyles from './pokemon-evolution-form.styles';
 @customElement('lit-pokemon-evolution-form')
 export class PokemonEvolutionsForm extends LitElement {
   static styles = pokemonEvolutionFormStyles;
+  modalOpened = false;
 
   @property({ type: Object })
   evolution?: Pokemon;
@@ -24,6 +25,16 @@ export class PokemonEvolutionsForm extends LitElement {
     e.preventDefault();
     console.log(this.evolution);
   }
+
+  handleOpenModal = () => {
+    this.modalOpened = true;
+    this.requestUpdate();
+  };
+
+  handleCloseModal = () => {
+    this.modalOpened = false;
+    this.requestUpdate();
+  };
 
   render() {
     return html`
@@ -44,7 +55,23 @@ export class PokemonEvolutionsForm extends LitElement {
             @input=${this.inputHandler}
           />
         </div>
+        <div class="form-group">
+          <label class="checkbox-container" @click=${this.handleOpenModal}>
+            Is Repeated?
+            <input type="checkbox" />
+            <span class="checkmark"></span>
+          </label>
+        </div>
       </form>
+
+      <lit-modal
+        .opened=${this.modalOpened}
+        @close-modal=${this.handleCloseModal}
+      >
+        <div slot="modal-content">
+          <div style="width: 400px; height: 200px">Modal Test</div>
+        </div>
+      </lit-modal>
     `;
   }
 }
