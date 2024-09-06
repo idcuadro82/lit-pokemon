@@ -18,8 +18,8 @@ export const pokemonCardStyles = css`
     width: 100%;
     height: 100%;
     border-radius: 10px;
-    box-shadow: 0px 0px 18px 1px rgba(161, 159, 161, 1);
-    background-color: #f0f0f0;
+    box-shadow: var(--component-shadow);
+    background-color: var(--pokemon-card-color);
   }
 
   .pokemon-card-types {

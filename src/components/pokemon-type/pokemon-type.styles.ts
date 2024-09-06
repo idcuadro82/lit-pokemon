@@ -29,6 +29,10 @@ export const pokemonTypeStyles = css`
     background-color: #e62829;
   }
 
+  .Flying {
+    background-color: #81b9ef;
+  }
+
   .Ghost {
     background-color: #704170;
   }

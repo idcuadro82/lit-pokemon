@@ -15,8 +15,17 @@ export class PokemonEvolutions extends LitElement {
 
   render() {
     return html`<div class="pokemon-evolution">
-      ${this.pokemons.map((pokemon) => html`<div></div>`)}
-      <button class="back-button" @click=${() => this.back()}>Back</button>
+      ${this.pokemons.map(
+        (pokemon) => html`<div class="pokemon-evolution-row">
+          <div class="pokemon-evolution-name">${pokemon.name}</div>
+          <div>
+            <lit-pokemon-card .pokemon=${pokemon}>
+          </div>
+        </div>`
+      )}
+      <div class="pokemon-evolution-action">
+        <button class="back-button" @click=${() => this.back()}>Back</button>
+      </div>
     </div> `;
   }
 

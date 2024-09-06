@@ -23,7 +23,7 @@ export class App extends LitElement {
       <lit-main-layout>
         <div slot="content">
           ${showEvolutions
-            ? html`<lit-pokemon-evolutions /> `
+            ? html`<lit-pokemon-evolutions .pokemons=${evolutions} /> `
             : html`<lit-pokemon-grid />`}
         </div>
       </lit-main-layout>
@@ -32,7 +32,6 @@ export class App extends LitElement {
 
   selectPokemon = (pokemon: Pokemon): void => {
     this.selectedPokemon = pokemon;
-    console.log(this.selectedPokemon);
     this.requestUpdate();
   };
 
