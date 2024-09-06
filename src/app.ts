@@ -8,6 +8,10 @@ export class App extends LitElement {
   static styles = appStyles;
 
   render() {
-    return html`<lit-main-layout></lit-main-layout>`;
+    return html`
+      <lit-main-layout>
+        <lit-pokemon-grid slot="content" />
+      </lit-main-layout>
+    `;
   }
 }

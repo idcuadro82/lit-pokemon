@@ -14,7 +14,7 @@ export class MainLayout extends LitElement {
         <img class="pokedex-logo" src=${PokedexImage} alt="pokedex" />
       </header>
       <div class="content">
-        <slot></slot>
+        <slot name="content"></slot>
       </div>
     `;
   }

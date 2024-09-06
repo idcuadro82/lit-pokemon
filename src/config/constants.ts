@@ -1,3 +1,3 @@
 export const API = {
-  POKEMON_URL: `http://${process.env.SERVER_HOST}/pokemon`,
+  POKEMON_URL: `${process.env.SERVER_HOST}/pokemon`,
 };

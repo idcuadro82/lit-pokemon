@@ -1,5 +1,5 @@
-import { API } from 'config/constants';
-import { Pokemon } from 'models/Pokemon';
+import { API } from '../config/constants';
+import { Pokemon } from '../models/Pokemon';
 
 export class PokemonService {
   private static instance: PokemonService;
@@ -10,7 +10,11 @@ export class PokemonService {
   }
 
   getAll = (): Promise<Pokemon[]> => {
-    return fetch(API.POKEMON_URL).then((response) => response.json());
+    return fetch(API.POKEMON_URL)
+      .then((response) => response.json())
+      .catch((error) => {
+        console.error(error);
+      });
   };
 }
 

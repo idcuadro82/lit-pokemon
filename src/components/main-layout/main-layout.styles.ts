@@ -16,8 +16,8 @@ export const mainLayoutStyles = css`
   }
 
   .content {
-    padding: 16px;
-    background-color: #f9f9f9;
+    padding: 20px;
+    background-color: white;
     min-height: 200px;
   }
 
